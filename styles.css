@@ -2,11 +2,53 @@
     background-color: lightgray;
     align-items: center;
 }
-
+/* new book button */
 button {
     padding: 10px;
     border-radius: 5px;
     background-color: rgb(103, 179, 103);
     border: none;
+    margin: 20px;
+    margin-bottom: -10px;
 }
 
+#library {
+    padding: 20px;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+
+}
+/* all the books styling */
+div {
+    padding: 1.7px;
+    background-color: aliceblue;
+    height: 
+}
+
+
+label {
+    margin: 20px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+}
+
+#form {
+    padding: 20px;
+}
+
+input {
+    border-radius: 5px;
+    background-color: white;
+}
+/* submit button in form */
+#submit {
+    background-color: rgb(103, 179, 103);
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* padding: 4px; */
+    /* border: none; */
+}
