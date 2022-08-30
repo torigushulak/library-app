@@ -2,27 +2,14 @@
 let myLibrary = [];
 
 class book {
-    constructor(author, title, pages) {
+    constructor(title, author, pages) {
         this.title = title,
         this.author = author,
-        this.pages = pages
+        this.pages = pages,
+        this.readStatus = false
     }
 }
-
-// this code is the view "refresher"
-function render() {
-    myLibrary.forEach(book => {
-        // append to library element
-        library.innerHTML = '';
-        for (i = 0; i < myLibrary.length; i++) {
-            temp = document.createElement('div');
-            temp.className = 'book';
-            temp.innerHTML = myLibrary[i];
-            document.getElementsByTagName('div')[0].appendChild(temp);
-        }
-    });
-}
-
+// testing books
 const winnie = {
     title: "Title: Winnie the Pooh", 
     author: "Author: A.A.Milne",
@@ -35,24 +22,60 @@ const cujo = {
     pages: "Pages: 400 " 
 };
 
-myLibrary.push(winnie.title, winnie.author, winnie.pages);
-myLibrary.push(cujo.title, cujo.author, cujo.pages);
+myLibrary.push(winnie);
+myLibrary.push(cujo);
 
+// this code is the view "refresher"
+function render() {
+    library.innerHTML = '';
 
+    myLibrary.forEach(book => {
+        // append to library element
+        bookCard = document.createElement('div');
+        bookCard.id = "book"
 
-let library = document.getElementById('library')
+        bookTitle = document.createElement('h2');
+        bookTitle.textContent = book.title;
+        bookCard.appendChild(bookTitle);
 
+        bookAuthor = document.createElement('h4');
+        bookAuthor.textContent = book.author;
+        bookCard.appendChild(bookAuthor);
+        
+
+        bookPages = document.createElement('p');
+        bookPages.textContent = book.pages;
+        bookCard.appendChild(bookPages);
+
+        checkLabel = document.createElement('label');
+        checkLabel.textContent = "Read:";
+        checkLabel.id = "checklabel"
+        bookCard.appendChild(checkLabel);
+        
+        newCheck = document.createElement('input');
+        newCheck.type = "checkbox";
+        newCheck.id = "check";
+        bookCard.appendChild(newCheck);
+
+        library.append(bookCard);
+        }
+    )
+}
+
+let library = document.getElementById('library');
 let form = document.querySelector("form");
+
+// prevents submit button from reloading page when clicked
 function handleForm(event) { event.preventDefault(); }
 form.addEventListener('submit', handleForm);
 
 form.onsubmit = function () {
-    author = document.getElementById("author").value;
-    title = document.getElementById("title").value;
-    pages = document.getElementById("pages").value;
+     title = document.getElementById("title").value;
+     author = document.getElementById("author").value;
+     pages = document.getElementById("pages").value;
 
-    newBook = new book(author, title, pages);
-    myLibrary.push(newBook.title, newBook.author, newBook.pages);
+    newBook = new book(title, author, pages);
+    myLibrary.push(newBook);
 
     // reset dom
     render ()
@@ -75,6 +98,6 @@ newBookButton.addEventListener("click", function () {
     }
 });
 
-
+// displays current books when page renders
 window.onload = () => render();
 

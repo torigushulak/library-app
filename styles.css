@@ -11,19 +11,45 @@ button {
     margin: 20px;
     margin-bottom: -10px;
 }
+/* books styling */
+#book {
+    /* display: flex; */
+    text-align: center;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: rgb(231, 212, 130);
+    margin: 2em;
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+}
+h2 {
+    background-color:  rgb(231, 212, 130);
+}
+h4 {
+    color: rgb(153, 75, 75);
+    background-color:  rgb(231, 212, 130);
+}
+p{
+    color: rgb(31, 89, 177);
+    background-color:  rgb(231, 212, 130);
+}
+#check {
+    background-color:  rgb(231, 212, 130);
+}
+#checklabel {
+    background-color:  rgb(231, 212, 130);
+}
+
+
+
+
+
 
 #library {
     padding: 20px;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: lightgray;
-
-}
-/* all the books styling */
-div {
-    padding: 1.7px;
-    background-color: aliceblue;
-    height: 
 }
 
 
@@ -32,13 +58,21 @@ label {
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+}
 
+#checklabel {
+    font-size: 18px;
+    margin: 3px;
+    font-weight: normal;
+}
+#checkbox {
+    margin-right: 5px;
 }
 
 #form {
     padding: 20px;
 }
-
+/* user input styling */
 input {
     border-radius: 5px;
     background-color: white;
