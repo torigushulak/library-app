@@ -32,7 +32,7 @@ function render() {
     myLibrary.forEach(book => {
         // append to library element
         bookCard = document.createElement('div');
-        bookCard.id = "book"
+        bookCard.id = "book";
 
         bookTitle = document.createElement('h2');
         bookTitle.textContent = book.title;
@@ -56,6 +56,19 @@ function render() {
         newCheck.type = "checkbox";
         newCheck.id = "check";
         bookCard.appendChild(newCheck);
+
+        removeB = document.createElement('button');
+        removeB.textContent = "Remove Book";
+        removeB.id = "removeB";
+        bookCard.appendChild(removeB);
+
+        removeB.addEventListener('click', function() {
+            const index = myLibrary.indexOf(book);
+            if(index > -1) {
+                myLibrary.splice(index, 1);
+            }
+            render()
+        });
 
         library.append(bookCard);
         }

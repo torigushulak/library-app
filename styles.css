@@ -40,6 +40,13 @@ p{
 #checklabel {
     background-color:  rgb(231, 212, 130);
 }
+#removeB {
+    margin: 5px;
+    margin-left: 15px;
+    background-color: rgba(143, 63, 31, 0.731);
+    width: 105px;
+    
+}
 
 
 
