@@ -83,7 +83,11 @@ function handleForm(event) { event.preventDefault(); }
 form.addEventListener('submit', handleForm);
 
 form.onsubmit = function () {
+    
      title = document.getElementById("title").value;
+    //  if(title == "") {
+    //     alert("no")
+    //  }
      author = document.getElementById("author").value;
      pages = document.getElementById("pages").value;
 
